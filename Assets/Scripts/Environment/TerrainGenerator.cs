@@ -18,6 +18,7 @@ public class TerrainGenerator : MonoBehaviour
                 Vector3Int newTile = tilemap.WorldToCell(transform.position);
                 newTile.x += x;
                 newTile.y += y;
+
                 if (!tilemap.HasTile(newTile))
                 {
                     tilemap.SetTile(newTile, earthTile);

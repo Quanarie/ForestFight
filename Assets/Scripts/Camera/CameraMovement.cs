@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour
     {
         Vector3 pos = Vector2.Lerp(transform.position, player.position, 0.05f);
         pos.z = transform.position.z;
+
         transform.position = pos;
     }
 }

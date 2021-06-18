@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Joystick joystick;
 
     private Animator animator;
-    private bool isFacingRight = true;
 
     private void Start()
     {
@@ -25,15 +24,13 @@ public class PlayerMovement : MonoBehaviour
         pos.x += xAxis * Time.deltaTime * speed;
         pos.y += yAxis * Time.deltaTime * speed;
 
-        if (pos.x < transform.position.x && isFacingRight)
+        if (pos.x < transform.position.x && transform.localScale.x > 0)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            isFacingRight = false;
         }
-        else if (pos.x > transform.position.x && !isFacingRight)
+        else if (pos.x > transform.position.x && transform.localScale.x < 0)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            isFacingRight = true;
         }
 
         if (xAxis == 0 && yAxis == 0)
