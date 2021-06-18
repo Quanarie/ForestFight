@@ -7,7 +7,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Joystick joystick;
 
+    private Animator animator;
     private bool isFacingRight = true;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -27,6 +33,15 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             isFacingRight = true;
+        }
+
+        if (xAxis == 0 && yAxis == 0)
+        {
+            animator.SetBool("isRunning", false);
+        }
+        else
+        {
+            animator.SetBool("isRunning", true);
         }
 
         transform.position = pos;

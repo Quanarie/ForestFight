@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
+  m_Name: PlayerIdle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -3145328045451892686, guid: 7154d92ab3c0e554eaee4b485de6dd8b, type: 3}
-    - time: 0.5
+    - time: 0.46666667
       value: {fileID: -6552843917330368855, guid: 7154d92ab3c0e554eaee4b485de6dd8b, type: 3}
     - time: 1
       value: {fileID: 7309844833446704383, guid: 7154d92ab3c0e554eaee4b485de6dd8b, type: 3}
