@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private float dodgeDistance;
     [SerializeField] private Joystick joystick;
 
     private Animator animator;
@@ -44,6 +45,13 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isRunning", true);
         }
 
+        transform.position = pos;
+    }
+
+    public void Dodge()
+    {
+        Vector3 pos = transform.position;
+        pos.x -= dodgeDistance * Mathf.Abs(transform.localScale.x) / transform.localScale.x;
         transform.position = pos;
     }
 }
