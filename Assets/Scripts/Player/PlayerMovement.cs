@@ -53,5 +53,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 pos = transform.position;
         pos.x -= dodgeDistance * Mathf.Abs(transform.localScale.x) / transform.localScale.x;
         transform.position = pos;
+
+        animator.SetTrigger("dodge");
     }
 }
