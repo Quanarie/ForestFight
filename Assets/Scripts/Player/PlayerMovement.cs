@@ -62,4 +62,6 @@ public class PlayerMovement : MonoBehaviour
             timeFromPreviousDodge = 0;
         }
     }
+
+    public bool isVisible { get; set; }
 }

@@ -38,4 +38,19 @@ public class PlayerAttack : MonoBehaviour
             timeFromPreviousAttack += Time.deltaTime;
         }
     }
+
+    public float Damage
+    {
+        get
+        {
+            return damage;
+        }
+        set
+        {
+            if (value > 0)
+            {
+                damage = value;
+            }
+        }
+    }
 }

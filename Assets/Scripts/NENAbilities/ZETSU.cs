@@ -6,11 +6,11 @@ public class ZETSU : MonoBehaviour, AbstractNENAbility
 {
     public void Activate()
     {
-
+        GetComponent<PlayerMovement>().isVisible = false;
     }
 
     public void Disactivate()
     {
-
+        GetComponent<PlayerMovement>().isVisible = true;
     }
 }
