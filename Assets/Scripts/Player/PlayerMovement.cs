@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private float unHiddenDistance;
     [SerializeField] private float dodgeDistance;
     [SerializeField] private float dodgeRechargeTime;
     [SerializeField] private Joystick joystick;
@@ -63,5 +64,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public bool isVisible { get; set; }
+    public float UnhiddenDistance
+    {
+        get
+        {
+            return unHiddenDistance;
+        }
+    }
+
+    public bool isHidden { get; set; }
 }

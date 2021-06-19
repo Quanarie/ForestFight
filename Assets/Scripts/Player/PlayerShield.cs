@@ -24,8 +24,6 @@ public class PlayerShield : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        print("armor " + currentArmor);
-        print("maxArmor " + maxArmor);
         if (currentArmor - damage >= 0)
         {
             currentArmor -= damage;

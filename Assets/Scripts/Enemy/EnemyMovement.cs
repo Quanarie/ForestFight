@@ -9,11 +9,15 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        Vector3 direction = new Vector3();
-        direction.x = player.position.x - transform.position.x;
-        direction.y = player.position.y - transform.position.y;
+        if (!player.gameObject.GetComponent<PlayerMovement>().isHidden ||
+            Vector3.Distance(player.position, transform.position) < player.gameObject.GetComponent<PlayerMovement>().UnhiddenDistance)
+        {
+            Vector3 direction = new Vector3();
+            direction.x = player.position.x - transform.position.x;
+            direction.y = player.position.y - transform.position.y;
 
-        transform.Translate(direction.normalized * speed * Time.deltaTime);
+            transform.Translate(direction.normalized * speed * Time.deltaTime);
+        }
     }
 
     public void SetTarget(Transform target)
