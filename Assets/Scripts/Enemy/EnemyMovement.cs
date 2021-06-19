@@ -15,4 +15,12 @@ public class EnemyMovement : MonoBehaviour
 
         transform.Translate(direction.normalized * speed * Time.deltaTime);
     }
+
+    public void SetTarget(Transform target)
+    {
+        if (target != null)
+        {
+            player = target;
+        }
+    }
 }

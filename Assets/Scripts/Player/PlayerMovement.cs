@@ -6,9 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float dodgeDistance;
+    [SerializeField] private float dodgeRechargeTime;
     [SerializeField] private Joystick joystick;
 
     private Animator animator;
+    private float timeFromPreviousDodge;
 
     private void Start()
     {
@@ -43,14 +45,21 @@ public class PlayerMovement : MonoBehaviour
         }
 
         transform.position = pos;
+
+        timeFromPreviousDodge += Time.deltaTime;
     }
 
     public void Dodge()
     {
-        Vector3 pos = transform.position;
-        pos.x -= dodgeDistance * Mathf.Abs(transform.localScale.x) / transform.localScale.x;
-        transform.position = pos;
+        if (timeFromPreviousDodge >= dodgeRechargeTime)
+        {
+            Vector3 pos = transform.position;
+            pos.x -= dodgeDistance * Mathf.Abs(transform.localScale.x) / transform.localScale.x;
+            transform.position = pos;
 
-        animator.SetTrigger("dodge");
+            animator.SetTrigger("dodge");
+
+            timeFromPreviousDodge = 0;
+        }
     }
 }
