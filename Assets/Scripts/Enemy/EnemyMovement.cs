@@ -9,10 +9,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        Vector3 pos = transform.position;
-        pos.x -= Mathf.Sign(pos.x - player.position.x) * speed * Time.deltaTime;
-        pos.y -= Mathf.Sign(pos.y - player.position.y) * speed * Time.deltaTime;
+        Vector3 direction = new Vector3();
+        direction.x = player.position.x - transform.position.x;
+        direction.y = player.position.y - transform.position.y;
 
-        transform.position = pos;
+        transform.Translate(direction.normalized * speed * Time.deltaTime);
     }
 }
