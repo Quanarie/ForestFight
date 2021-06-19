@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  unHiddenDistance: 3
+  unhiddenDistance: 15
   dodgeDistance: 5
   dodgeRechargeTime: 1
   joystick: {fileID: 2067904675}

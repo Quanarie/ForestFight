@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ZETSU : MonoBehaviour, AbstractNENAbility
 {
+    private const float hiddenCoefficient = 1.5f;
+
     public void Activate()
     {
-        GetComponent<PlayerMovement>().isHidden = false;
+        GetComponent<PlayerMovement>().UnhiddenDistance = GetComponent<PlayerMovement>().UnhiddenDistance / hiddenCoefficient;
     }
 
     public void Disactivate()
     {
-        GetComponent<PlayerMovement>().isHidden = true;
+        GetComponent<PlayerMovement>().UnhiddenDistance = GetComponent<PlayerMovement>().UnhiddenDistance * hiddenCoefficient;
     }
 }

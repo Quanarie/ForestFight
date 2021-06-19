@@ -9,8 +9,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!player.gameObject.GetComponent<PlayerMovement>().isHidden ||
-            Vector3.Distance(player.position, transform.position) < player.gameObject.GetComponent<PlayerMovement>().UnhiddenDistance)
+        if (Vector3.Distance(player.position, transform.position) < player.gameObject.GetComponent<PlayerMovement>().UnhiddenDistance)
         {
             Vector3 direction = new Vector3();
             direction.x = player.position.x - transform.position.x;

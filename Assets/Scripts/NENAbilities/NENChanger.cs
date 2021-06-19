@@ -29,6 +29,7 @@ public class NENChanger : MonoBehaviour
             currentAbility = 0;
         }
         NENAbilities[currentAbility].Activate();
+        print(NENAbilities[currentAbility] + " is activated");
     }
 
     public void Previous()
