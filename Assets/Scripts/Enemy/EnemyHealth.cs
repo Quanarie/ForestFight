@@ -16,13 +16,13 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (currentHealth - damage >= 0)
+        if (currentHealth - damage > 0)
         {
             currentHealth -= damage;
-            if (currentHealth == 0)
-            {
-                Destroy(gameObject);
-            }
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

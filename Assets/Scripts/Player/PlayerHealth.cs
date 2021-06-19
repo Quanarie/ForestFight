@@ -16,13 +16,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (currentHealth - damage >= 0)
+        if (currentHealth - damage > 0)
         {
             currentHealth -= damage;
-            if (currentHealth == 0)
-            {
-                SceneManager.LoadScene(0);
-            }
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

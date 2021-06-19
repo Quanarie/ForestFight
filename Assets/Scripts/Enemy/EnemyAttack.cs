@@ -16,11 +16,11 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerHealth _))
+        if (collision.TryGetComponent(out PlayerShield _))
         {
             if (timeFromPreviousAttack >= rechargeTime)
             {
-                collision.GetComponent<PlayerHealth>().TakeDamage(damage);
+                collision.GetComponent<PlayerShield>().TakeDamage(damage);
 
                 timeFromPreviousAttack = 0;
             }
