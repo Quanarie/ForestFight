@@ -22,6 +22,8 @@ public class EnemyAttack : MonoBehaviour
             {
                 collision.GetComponent<PlayerShield>().TakeDamage(damage);
 
+                collision.GetComponent<Animator>().SetTrigger("damage");
+
                 timeFromPreviousAttack = 0;
             }
         }

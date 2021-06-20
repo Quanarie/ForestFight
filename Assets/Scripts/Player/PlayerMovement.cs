@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,12 +10,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dodgeDistance;
     [SerializeField] private float dodgeRechargeTime;
     [SerializeField] private Joystick joystick;
+    [SerializeField] private Slider stealthUpgradeSlider;
 
     private Animator animator;
     private float timeFromPreviousDodge;
 
     private void Start()
     {
+        stealthUpgradeSlider.value = -unhiddenDistance;
         animator = GetComponent<Animator>();
     }
 
@@ -61,6 +64,14 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("dodge");
 
             timeFromPreviousDodge = 0;
+        }
+    }
+
+    public void OnStealthValueChange(float newStealthValue)
+    {
+        if (newStealthValue > -unhiddenDistance)
+        {
+            unhiddenDistance = -newStealthValue;
         }
     }
 
