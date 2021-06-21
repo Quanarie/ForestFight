@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class TerrainGenerator : MonoBehaviour
 {
     [SerializeField] private Tilemap tilemap;
-    [SerializeField] private Tile earthTile;
+    [SerializeField] private Tile[] tiles;
     [SerializeField] private int generationRadius;
 
     private void LateUpdate()
@@ -15,13 +15,13 @@ public class TerrainGenerator : MonoBehaviour
         {
             for (int y = -generationRadius; y < generationRadius; y++)
             {
-                Vector3Int newTile = tilemap.WorldToCell(transform.position);
-                newTile.x += x;
-                newTile.y += y;
+                Vector3Int newTilePos = tilemap.WorldToCell(transform.position);
+                newTilePos.x += x;
+                newTilePos.y += y;
 
-                if (!tilemap.HasTile(newTile))
+                if (!tilemap.HasTile(newTilePos))
                 {
-                    tilemap.SetTile(newTile, earthTile);
+                    tilemap.SetTile(newTilePos, tiles[(int)(Random.Range(0f, tiles.Length) * Random.Range(0f, 0.8f))]);
                 }
             }
         }
