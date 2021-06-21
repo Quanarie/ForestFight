@@ -1751,7 +1751,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 1.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6694,7 +6694,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.875, y: 1.75}
+  m_Size: {x: 0.28125, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6727,7 +6727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7691692064570d4fae087beb5195b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   unhiddenDistance: 15
   dodgeDistance: 5
   dodgeRechargeTime: 1
@@ -6817,8 +6817,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.875, y: 1.75}
+  m_Offset: {x: 0.00011149049, y: -0.013028741}
+  m_Size: {x: 0.21863693, y: 0.9702475}
   m_Direction: 0
 --- !u!50 &2048743859
 Rigidbody2D:
