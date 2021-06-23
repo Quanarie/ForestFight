@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NENChanger : MonoBehaviour
 {
     [SerializeField] private RuntimeAnimatorController NENAnimator;
     [SerializeField] private RuntimeAnimatorController ZETSUAnimator;
     [SerializeField] private GameObject RENBackground;
+    [SerializeField] private GameObject NENButton;
+    [SerializeField] private Sprite[] NENAbilitiesBackgrounds;
 
     private AbstractNENAbility[] NENAbilities;
     private int currentAbility = 0;
@@ -36,16 +39,19 @@ public class NENChanger : MonoBehaviour
 
         if (currentAbility == 0)
         {
+            NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[0];
             GetComponent<Animator>().runtimeAnimatorController = NENAnimator;
         }
         else if (currentAbility == 1)
         {
             RENBackground.SetActive(true);
+            NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[1];
             GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
         }
         else
         {
             RENBackground.SetActive(false);
+            NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[2];
             GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
         }
     }
@@ -66,14 +72,17 @@ public class NENChanger : MonoBehaviour
         if (currentAbility == 0)
         {
             RENBackground.SetActive(false);
+            NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[0];
             GetComponent<Animator>().runtimeAnimatorController = NENAnimator;
         }
         else if (currentAbility == 1)
         {
             RENBackground.SetActive(true);
+            NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[1];
         }
         else
         {
+            NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[2];
             GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
         }
     }
