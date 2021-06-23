@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Slider stealthUpgradeSlider;
 
     private Animator animator;
-    private float timeFromPreviousDodge;
+    private float timeFromPreviousDodge = 0f;
 
     private void Start()
     {

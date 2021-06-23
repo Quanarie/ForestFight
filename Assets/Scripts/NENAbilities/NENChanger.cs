@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class NENChanger : MonoBehaviour
 {
+    [SerializeField] private RuntimeAnimatorController NENAnimator;
+    [SerializeField] private RuntimeAnimatorController ZETSUAnimator;
+    [SerializeField] private GameObject RENBackground;
+
     private AbstractNENAbility[] NENAbilities;
     private int currentAbility = 0;
     private const int abilitiesQuantity = 3;
@@ -29,7 +33,21 @@ public class NENChanger : MonoBehaviour
             currentAbility = 0;
         }
         NENAbilities[currentAbility].Activate();
-        print(NENAbilities[currentAbility] + " is activated");
+
+        if (currentAbility == 0)
+        {
+            GetComponent<Animator>().runtimeAnimatorController = NENAnimator;
+        }
+        else if (currentAbility == 1)
+        {
+            RENBackground.SetActive(true);
+            GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
+        }
+        else
+        {
+            RENBackground.SetActive(false);
+            GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
+        }
     }
 
     public void Previous()
@@ -44,5 +62,19 @@ public class NENChanger : MonoBehaviour
             currentAbility = 2;
         }
         NENAbilities[currentAbility].Activate();
+
+        if (currentAbility == 0)
+        {
+            RENBackground.SetActive(false);
+            GetComponent<Animator>().runtimeAnimatorController = NENAnimator;
+        }
+        else if (currentAbility == 1)
+        {
+            RENBackground.SetActive(true);
+        }
+        else
+        {
+            GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
+        }
     }
 }

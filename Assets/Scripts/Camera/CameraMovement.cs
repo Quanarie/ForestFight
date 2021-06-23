@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        Vector3 pos = Vector2.Lerp(transform.position, player.position, 0.05f);
+        Vector3 pos = Vector2.Lerp(transform.position, player.position, 0.1f);
         pos.z = transform.position.z;
 
         transform.position = pos;

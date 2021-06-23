@@ -11,31 +11,30 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private LayerMask attackableObjects;
 
     private Animator animator;
-    private float timeFromPreviousAttack;
+    private float timeFromPreviousAttack = 0f;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
     }
+    private void Update()
+    {
+        timeFromPreviousAttack += Time.deltaTime;
+    }
 
     public void Attack() 
     {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackDistance, attackableObjects);
-        if (enemies.Length > 0)
-        {
-            enemies[0].GetComponent<EnemyHealth>().TakeDamage(damage);
-        }
-
-        animator.SetTrigger("attack");
-
-
         if (timeFromPreviousAttack >= rechargeTime)
         {
-            
-        }
-        else
-        {
-            timeFromPreviousAttack += Time.deltaTime;
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackDistance, attackableObjects);
+            if (enemies.Length > 0)
+            {
+                enemies[0].GetComponent<EnemyHealth>().TakeDamage(damage);
+            }
+
+            animator.SetTrigger("attack");
+
+            timeFromPreviousAttack = 0f;
         }
     }
 
