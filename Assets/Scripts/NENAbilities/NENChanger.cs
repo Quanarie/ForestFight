@@ -8,6 +8,7 @@ public class NENChanger : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController NENAnimator;
     [SerializeField] private RuntimeAnimatorController ZETSUAnimator;
     [SerializeField] private GameObject RENBackground;
+    [SerializeField] private GameObject ZETSUField;
     [SerializeField] private GameObject NENButton;
     [SerializeField] private Sprite[] NENAbilitiesBackgrounds;
 
@@ -22,6 +23,8 @@ public class NENChanger : MonoBehaviour
         NENAbilities[1] = GetComponent<REN>();
         NENAbilities[2] = GetComponent<ZETSU>();
         NENAbilities[0].Activate();
+
+        GetComponent<Animator>().runtimeAnimatorController = NENAnimator;
     }
 
     public void Next()
@@ -39,6 +42,7 @@ public class NENChanger : MonoBehaviour
 
         if (currentAbility == 0)
         {
+            ZETSUField.SetActive(false);
             NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[0];
             GetComponent<Animator>().runtimeAnimatorController = NENAnimator;
         }
@@ -50,6 +54,7 @@ public class NENChanger : MonoBehaviour
         }
         else
         {
+            ZETSUField.SetActive(true);
             RENBackground.SetActive(false);
             NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[2];
             GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
@@ -77,11 +82,13 @@ public class NENChanger : MonoBehaviour
         }
         else if (currentAbility == 1)
         {
+            ZETSUField.SetActive(false);
             RENBackground.SetActive(true);
             NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[1];
         }
         else
         {
+            ZETSUField.SetActive(true);
             NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[2];
             GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
         }

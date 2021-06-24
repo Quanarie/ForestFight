@@ -23,7 +23,10 @@ public class EnemySpawner : MonoBehaviour
         if (timeFromPreviousSpawn >= currentTimeBetweenSpawn)
         {
             GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Length)]);
-            Vector3 enemyPosition = Random.insideUnitCircle * spawnRadius;
+            Vector3 enemyPosition = transform.position;
+            Vector3 enemyShift = Random.insideUnitCircle * spawnRadius;
+            enemyPosition.x += enemyShift.x;
+            enemyPosition.y += enemyShift.y;
             if (Vector3.Distance(enemyPosition, transform.position) < visibleRadius)
             {
                 enemyPosition *= spawnRadius / visibleRadius;
