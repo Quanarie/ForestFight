@@ -5,8 +5,16 @@ using UnityEngine.UI;
 
 public class BarUpgrade : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
+    [SerializeField] private float upgradeCost;
+
     public void Upgrade(float toUpgrade)
     {
-        GetComponent<Slider>().value += toUpgrade;
+        if (player.GetComponent<PlayerMoney>().CurrentMoney >= upgradeCost)
+        {
+            player.GetComponent<PlayerMoney>().CurrentMoney -= upgradeCost;
+            GetComponent<Slider>().value += toUpgrade;
+        }
+        else print("error");
     }
 }

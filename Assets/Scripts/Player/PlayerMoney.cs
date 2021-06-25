@@ -1,8 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMoney : MonoBehaviour
 {
-    public float CurrentMoney { get; set; }
+    [SerializeField] private TextMeshProUGUI moneyText;
+
+    private float moneyValue = 0f;
+
+    public float CurrentMoney 
+    { 
+        get
+        {
+            return moneyValue;
+        }
+        set
+        {
+            moneyValue = value;
+            moneyText.text = value.ToString();
+        }
+    }
 }
