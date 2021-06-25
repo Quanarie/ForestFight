@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float visibleRadius;
     [SerializeField] private float minTimeBetweenSpawn;
     [SerializeField] private float maxTimeBetweenSpawn;
+    [SerializeField] private Transform enemiesParent;
 
     private float currentTimeBetweenSpawn;
     private float timeFromPreviousSpawn = 0f;
@@ -22,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (timeFromPreviousSpawn >= currentTimeBetweenSpawn)
         {
-            GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Length)]);
+            GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Length)], enemiesParent);
             Vector3 enemyPosition = transform.position;
             Vector3 enemyShift = Random.insideUnitCircle * spawnRadius;
             enemyPosition.x += enemyShift.x;

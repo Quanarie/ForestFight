@@ -6134,6 +6134,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1879080451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1879080452}
+  m_Layer: 0
+  m_Name: Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1879080452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879080451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -40.792656, y: 15.133118, z: -47.379375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1883068224
 GameObject:
   m_ObjectHideFlags: 0
@@ -6614,6 +6644,7 @@ GameObject:
   - component: {fileID: 2048743862}
   - component: {fileID: 2048743866}
   - component: {fileID: 2048743867}
+  - component: {fileID: 2048743868}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6831,6 +6862,7 @@ MonoBehaviour:
   visibleRadius: 15
   minTimeBetweenSpawn: 1
   maxTimeBetweenSpawn: 2
+  enemiesParent: {fileID: 1879080452}
 --- !u!114 &2048743861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6934,6 +6966,25 @@ MonoBehaviour:
   tiles:
   - {fileID: 11400000, guid: 47a5e40907792a2499c9fd7904884d2b, type: 2}
   spawnRechargeTime: 1
+--- !u!114 &2048743868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048743850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11338647009892f49b9da1985eb0087d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalPrefab: {fileID: 4546622299766577811, guid: 6d03a518a48fb8e48bec3447cf367654, type: 3}
+  minimalDistance: 20
+  maximalDistance: 21
+  tilemaps:
+  - {fileID: 192050269}
+  - {fileID: 313422010}
+  enemies: {fileID: 1879080452}
 --- !u!1 &2061690073
 GameObject:
   m_ObjectHideFlags: 0
