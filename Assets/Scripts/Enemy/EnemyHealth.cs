@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
     [SerializeField] private float maxHealth;
+    [SerializeField] private float moneyForKilling;
 
     private float currentHealth;
 
@@ -22,7 +24,16 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
+            player.GetComponent<PlayerMoney>().CurrentMoney += moneyForKilling;
             Destroy(gameObject);
+        }
+    }
+
+    public void SetPlayer(GameObject player)
+    {
+        if (player != null)
+        {
+            this.player = player;
         }
     }
 }

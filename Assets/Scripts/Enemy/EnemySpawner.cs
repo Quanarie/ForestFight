@@ -35,6 +35,7 @@ public class EnemySpawner : MonoBehaviour
             enemy.transform.position = enemyPosition;
 
             enemy.GetComponent<EnemyMovement>().SetTarget(transform);
+            enemy.GetComponent<EnemyHealth>().SetPlayer(transform.gameObject);
 
             timeFromPreviousSpawn = 0;
             currentTimeBetweenSpawn = Random.Range(minTimeBetweenSpawn, maxTimeBetweenSpawn);

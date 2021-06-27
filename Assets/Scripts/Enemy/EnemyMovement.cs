@@ -6,7 +6,6 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private float speed;
-    [SerializeField] private float moneyForKilling;
 
     private void Update()
     {
@@ -25,14 +24,6 @@ public class EnemyMovement : MonoBehaviour
         if (target != null)
         {
             player = target;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (player != null)
-        {
-            player.gameObject.GetComponent<PlayerMoney>().CurrentMoney += moneyForKilling;
         }
     }
 }
