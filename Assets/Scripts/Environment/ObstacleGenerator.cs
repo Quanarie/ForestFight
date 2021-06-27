@@ -6,36 +6,49 @@ using UnityEngine.Tilemaps;
 public class ObstacleGenerator : MonoBehaviour
 {
     [SerializeField] private Tilemap tilemap;
-    [SerializeField] private Tile[] tiles;
-    [SerializeField] private float spawnRechargeTime;
+    [SerializeField] private Tile[] obstacles;
+    [SerializeField] private float spawnDistance;   //distance that player should pass to spawn another obstacle
+    [SerializeField] private float visibleRadius;
 
-    private float visibleRadius;
-    private float timeFromPreviousSpawn = 0f;
+    private float distanceFromPreviousSpawn = 0f;
+    private Vector3 previousPosition;
 
     private void Start()
     {
-        visibleRadius = GetComponent<PlayerMovement>().UnhiddenDistance;
+        previousPosition = transform.position;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
-        if (timeFromPreviousSpawn >= spawnRechargeTime)
+        if (distanceFromPreviousSpawn >= spawnDistance)
         {
-            Vector3Int obstaclePosition = tilemap.WorldToCell(transform.position);
-            int randSign = Random.Range(-1, 2);
-            obstaclePosition.x += (int)Random.Range(visibleRadius, visibleRadius * 2) * randSign;
-            obstaclePosition.y += (int)Random.Range(visibleRadius, visibleRadius * 2) * randSign;
-
-            if (!tilemap.HasTile(obstaclePosition))
+            Vector3Int obstaclePos = tilemap.WorldToCell(transform.position);
+            if (Random.value >= 0.5f)
             {
-                tilemap.SetTile(obstaclePosition, tiles[(int)(Random.Range(0f, tiles.Length))]);
+                obstaclePos.x += (int)Random.Range(visibleRadius, 2 * visibleRadius);
+            }
+            else
+            {
+                obstaclePos.x -= (int)Random.Range(visibleRadius, 2 * visibleRadius);
+            }
+            if (Random.value >= 0.5f)
+            {
+                obstaclePos.y += (int)Random.Range(visibleRadius, 2 * visibleRadius);
+            }
+            else
+            {
+                obstaclePos.y -= (int)Random.Range(visibleRadius, 2 * visibleRadius);
             }
 
-            timeFromPreviousSpawn = 0f;
+            tilemap.SetTile(obstaclePos, obstacles[Random.Range(0, obstacles.Length)]);
+
+            distanceFromPreviousSpawn = 0f;
         }
         else
         {
-            timeFromPreviousSpawn += Time.deltaTime;
+            distanceFromPreviousSpawn += Vector3.Distance(previousPosition, transform.position);
         }
+
+        previousPosition = transform.position;
     }
 }

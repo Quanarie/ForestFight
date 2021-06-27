@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NENChanger : MonoBehaviour
 {
     [SerializeField] private RuntimeAnimatorController NENAnimator;
+    [SerializeField] private RuntimeAnimatorController RENAnimator;
     [SerializeField] private RuntimeAnimatorController ZETSUAnimator;
     [SerializeField] private GameObject RENBackground;
     [SerializeField] private GameObject ZETSUField;
@@ -50,7 +51,7 @@ public class NENChanger : MonoBehaviour
         {
             RENBackground.SetActive(true);
             NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[1];
-            GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
+            GetComponent<Animator>().runtimeAnimatorController = RENAnimator;
         }
         else
         {
@@ -85,6 +86,7 @@ public class NENChanger : MonoBehaviour
             ZETSUField.SetActive(false);
             RENBackground.SetActive(true);
             NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[1];
+            GetComponent<Animator>().runtimeAnimatorController = RENAnimator;
         }
         else
         {

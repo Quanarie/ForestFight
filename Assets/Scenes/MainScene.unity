@@ -378,7 +378,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117467041}
   m_Enabled: 1
-  m_CellSize: {x: 0.5, y: 0.25, z: 1}
+  m_CellSize: {x: 1, y: 0.5, z: 1}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 2
   m_CellSwizzle: 0
@@ -2266,7 +2266,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2048743864}
         m_TargetAssemblyTypeName: NENChanger, Assembly-CSharp
-        m_MethodName: Next
+        m_MethodName: Previous
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2339,7 +2339,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734446633}
   m_Enabled: 1
-  m_CellSize: {x: 0.5, y: 0.25, z: 1}
+  m_CellSize: {x: 1, y: 0.5, z: 1}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 2
   m_CellSwizzle: 0
@@ -7060,7 +7060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73e879d297880042ac725e6eb050155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NENAnimator: {fileID: 9100000, guid: 8fa0efb6729cdd243acfe54fcf786246, type: 2}
+  NENAnimator: {fileID: 9100000, guid: 33d561f6d3c774346bd0ffafba71cb2c, type: 2}
+  RENAnimator: {fileID: 9100000, guid: 33d561f6d3c774346bd0ffafba71cb2c, type: 2}
   ZETSUAnimator: {fileID: 9100000, guid: 33d561f6d3c774346bd0ffafba71cb2c, type: 2}
   RENBackground: {fileID: 1437608707}
   ZETSUField: {fileID: 952063511}
@@ -7108,9 +7109,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 192050269}
-  tiles:
+  obstacles:
   - {fileID: 11400000, guid: 47a5e40907792a2499c9fd7904884d2b, type: 2}
-  spawnRechargeTime: 10
+  spawnDistance: 5
+  visibleRadius: 10
 --- !u!114 &2048743868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7125,7 +7127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portalPrefab: {fileID: 4546622299766577811, guid: 6d03a518a48fb8e48bec3447cf367654, type: 3}
   minimalDistance: 5
-  maximalDistance: 15
+  maximalDistance: 5
   tilemaps:
   - {fileID: 192050269}
   - {fileID: 313422010}

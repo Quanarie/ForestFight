@@ -1,37 +1,7 @@
 fileFormatVersion: 2
-guid: b62ea99effdc042498ae800b0cea5a0f
+guid: 0a4c3675723336845936d4ccdff8b613
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -2664786254714208617
-    second: FloorSprite_0
-  - first:
-      213: -2766691540903383062
-    second: FloorSprite_1
-  - first:
-      213: 9088093518499217422
-    second: FloorSpriteWithoutBorders_0
-  - first:
-      213: -245781564765321290
-    second: FloorSpriteWithoutBorders_1
-  - first:
-      213: -1651972486956539397
-    second: FloorSpriteWithoutBorders_2
-  - first:
-      213: 2706034029355294078
-    second: FloorSprite_2
-  - first:
-      213: 1504027993500216517
-    second: FloorSprites_0
-  - first:
-      213: -6308123118258777541
-    second: FloorSprites_1
-  - first:
-      213: 5643925292992977233
-    second: FloorSprites_2
-  - first:
-      213: 4778105692053784531
-    second: FloorSprites_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -71,11 +41,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.19990693, y: 0.48189634}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -143,70 +113,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: FloorSprites_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5cce2dccd716fd410800000000000000
-      internalID: 1504027993500216517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FloorSprites_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3291c0227b0578a0800000000000000
-      internalID: -6308123118258777541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FloorSprites_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15950b3b620435e40800000000000000
-      internalID: 5643925292992977233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
