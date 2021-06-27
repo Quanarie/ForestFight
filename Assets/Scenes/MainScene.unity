@@ -1853,7 +1853,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.5
+  orthographic size: 2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6841,7 +6841,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.96875, y: 0.96875}
+  m_Size: {x: 0.5, y: 1.09375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6874,7 +6874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7691692064570d4fae087beb5195b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   unhiddenDistance: 15
   dodgeDistance: 3
   dodgeRechargeTime: 1
@@ -6914,7 +6914,7 @@ MonoBehaviour:
   attackPoint: {fileID: 1580434849}
   attackDistance: 1
   damage: 1
-  rechargeTime: 1
+  rechargeTime: 0.2
   attackableObjects:
     serializedVersion: 2
     m_Bits: 64
@@ -7110,7 +7110,7 @@ MonoBehaviour:
   tilemap: {fileID: 192050269}
   tiles:
   - {fileID: 11400000, guid: 47a5e40907792a2499c9fd7904884d2b, type: 2}
-  spawnRechargeTime: 1
+  spawnRechargeTime: 10
 --- !u!114 &2048743868
 MonoBehaviour:
   m_ObjectHideFlags: 0

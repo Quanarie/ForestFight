@@ -30,6 +30,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnDestroy()
     {
-        player.gameObject.GetComponent<PlayerMoney>().CurrentMoney += moneyForKilling;
+        if (player != null)
+        {
+            player.gameObject.GetComponent<PlayerMoney>().CurrentMoney += moneyForKilling;
+        }
     }
 }

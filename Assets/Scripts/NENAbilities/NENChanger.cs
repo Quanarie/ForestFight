@@ -24,7 +24,7 @@ public class NENChanger : MonoBehaviour
         NENAbilities[2] = GetComponent<ZETSU>();
         NENAbilities[0].Activate();
 
-        GetComponent<Animator>().runtimeAnimatorController = NENAnimator;
+        //GetComponent<Animator>().runtimeAnimatorController = NENAnimator;
     }
 
     public void Next()
