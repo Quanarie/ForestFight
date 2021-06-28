@@ -41,4 +41,21 @@ public class PlayerHealth : MonoBehaviour
             maxHealth = newHealth;
         }
     }
+
+    public void Heal(float toHeal)
+    {
+        if (toHeal > 0)
+        {
+            if (currentHealth + toHeal > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            else
+            {
+                currentHealth += toHeal;
+            }
+
+            healthSlider.value = currentHealth;
+        }
+    }
 }
