@@ -22,4 +22,9 @@ public class Pickupable : MonoBehaviour
             }
         }
     }
+
+    public void SetInventory(Inventory inventory)
+    {
+        this.inventory = inventory;
+    }
 }

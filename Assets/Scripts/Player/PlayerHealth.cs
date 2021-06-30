@@ -22,7 +22,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        print("took damage");
         DamageDisplay.Instance.AddText((int)damage, transform.position);
 
         if (currentHealth - damage > 0)

@@ -7915,6 +7915,7 @@ GameObject:
   - component: {fileID: 2048743866}
   - component: {fileID: 2048743867}
   - component: {fileID: 2048743868}
+  - component: {fileID: 2048743870}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -8271,6 +8272,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 307326302}
+--- !u!114 &2048743870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048743850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aece0e2177cd21d48a0cd1c6bb724834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potions:
+  - {fileID: 6146811133726165489, guid: 0ef37af2722c8c14f975b5601933e3e8, type: 3}
+  - {fileID: 6674433463340141576, guid: 1fc92f5d4838d254eb2092b5b45b1255, type: 3}
+  spawnDistance: 5
+  visibleRadius: 3
+  inventory: {fileID: 275166816}
 --- !u!1 &2061690073
 GameObject:
   m_ObjectHideFlags: 0

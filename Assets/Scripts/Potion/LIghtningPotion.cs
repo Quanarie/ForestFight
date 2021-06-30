@@ -32,7 +32,6 @@ public class LIghtningPotion : MonoBehaviour, AbstractPotion
         {
             nearestEnemy.GetComponent<EnemyHealth>().TakeDamage(toDamage);
         }
-
         Destroy(gameObject);
     }
 }
