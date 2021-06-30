@@ -10,6 +10,7 @@ public class PortalSpawner : MonoBehaviour
     [SerializeField] private float maximalDistance;
     [SerializeField] private Tilemap[] tilemaps;
     [SerializeField] private Transform enemies;
+    [SerializeField] private Transform potions;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class PortalSpawner : MonoBehaviour
         newPortal.GetComponent<PortalTeleport>().SetTilemaps(tilemaps);
         newPortal.GetComponent<PortalTeleport>().SetPlayer(transform.gameObject);
         newPortal.GetComponent<PortalTeleport>().SetEnemies(enemies);
+        newPortal.GetComponent<PortalTeleport>().SetPotions(potions);
         newPortal.GetComponent<EnemySpawner>().SetEnemies(enemies);
     }
 

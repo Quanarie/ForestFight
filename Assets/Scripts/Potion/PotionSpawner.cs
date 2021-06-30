@@ -9,6 +9,7 @@ public class PotionSpawner : MonoBehaviour
     [SerializeField] private float spawnRadius;
     [SerializeField] private float visibleRadius;
     [SerializeField] private Inventory inventory;
+    [SerializeField] private Transform potionParent;
 
     private float distanceFromPreviousSpawn = 0f;
     private Vector3 previousPosition;
@@ -27,7 +28,7 @@ public class PotionSpawner : MonoBehaviour
             Vector3 obstaclePos = new Vector3(Mathf.Cos(randAng) * randRadius, Mathf.Sin(randAng) * randRadius, transform.position.z);
             obstaclePos.x += transform.position.x;
             obstaclePos.y += transform.position.y;
-            GameObject newPotion = Instantiate(potions[Random.Range(0, potions.Length)], obstaclePos, transform.rotation);
+            GameObject newPotion = Instantiate(potions[Random.Range(0, potions.Length)], obstaclePos, transform.rotation, potionParent);
 
             newPotion.GetComponent<Pickupable>().SetInventory(inventory);
 

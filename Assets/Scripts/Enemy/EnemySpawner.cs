@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
             Vector3 enemyPos = new Vector3(Mathf.Cos(randAng) * randRadius, Mathf.Sin(randAng) * randRadius, transform.position.z);
             enemyPos.x += transform.position.x;
             enemyPos.y += transform.position.y;
-            GameObject newEnemy = Instantiate(enemies[Random.Range(0, enemies.Length)], enemyPos, transform.rotation);
+            GameObject newEnemy = Instantiate(enemies[Random.Range(0, enemies.Length)], enemyPos, transform.rotation, enemiesParent);
 
             newEnemy.GetComponent<EnemyMovement>().SetTarget(target);
             newEnemy.GetComponent<EnemyHealth>().SetPlayer(target.gameObject);
