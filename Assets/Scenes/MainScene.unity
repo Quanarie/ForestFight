@@ -7783,7 +7783,6 @@ GameObject:
   - component: {fileID: 2048743855}
   - component: {fileID: 2048743856}
   - component: {fileID: 2048743857}
-  - component: {fileID: 2048743860}
   - component: {fileID: 2048743861}
   - component: {fileID: 2048743869}
   - component: {fileID: 2048743864}
@@ -7993,25 +7992,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2048743860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048743850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e011c055c8c9d046af59102cf2ea892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 6638328735409459330, guid: 00872949f99eed2419dacdabae2ac08c, type: 3}
-  spawnRadius: 20
-  visibleRadius: 15
-  minTimeBetweenSpawn: 1
-  maxTimeBetweenSpawn: 10
-  enemiesParent: {fileID: 1879080452}
 --- !u!114 &2048743861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8117,6 +8097,7 @@ MonoBehaviour:
   obstacles:
   - {fileID: 11400000, guid: 47a5e40907792a2499c9fd7904884d2b, type: 2}
   spawnDistance: 5
+  spawnRadius: 20
   visibleRadius: 10
 --- !u!114 &2048743868
 MonoBehaviour:
@@ -8166,6 +8147,7 @@ MonoBehaviour:
   - {fileID: 6146811133726165489, guid: 0ef37af2722c8c14f975b5601933e3e8, type: 3}
   - {fileID: 6674433463340141576, guid: 1fc92f5d4838d254eb2092b5b45b1255, type: 3}
   spawnDistance: 5
+  spawnRadius: 6
   visibleRadius: 3
   inventory: {fileID: 275166816}
 --- !u!1 &2061690073

@@ -22,6 +22,7 @@ public class PortalSpawner : MonoBehaviour
         newPortal.GetComponent<PortalTeleport>().SetTilemaps(tilemaps);
         newPortal.GetComponent<PortalTeleport>().SetPlayer(transform.gameObject);
         newPortal.GetComponent<PortalTeleport>().SetEnemies(enemies);
+        newPortal.GetComponent<EnemySpawner>().SetEnemies(enemies);
     }
 
     public void Spawn()

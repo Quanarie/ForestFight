@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 830410940062221816}
   - component: {fileID: 2248649902282135557}
   - component: {fileID: -6975583379678248826}
+  - component: {fileID: -3311999128484250635}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -112,4 +113,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c32c8dc9107f0c4bbb0af45d8ed9e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemaps: []
+--- !u!114 &-3311999128484250635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546622299766577811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e011c055c8c9d046af59102cf2ea892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 6638328735409459330, guid: 00872949f99eed2419dacdabae2ac08c, type: 3}
+  spawnMultiplier: 1.5
+  minTimeBetweenSpawn: 1
+  maxTimeBetweenSpawn: 2
+  enemiesParent: {fileID: 0}
+  target: {fileID: 0}
