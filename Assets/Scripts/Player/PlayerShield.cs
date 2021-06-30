@@ -33,6 +33,8 @@ public class PlayerShield : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        DamageDisplay.Instance.AddText((int)damage, transform.position);
+        
         if (currentArmor - damage >= 0)
         {
             currentArmor -= damage;
