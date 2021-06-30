@@ -42,6 +42,8 @@ public class PlayerHealth : MonoBehaviour
         {
             maxHealth = newHealth;
         }
+
+        healthSlider.maxValue = maxHealth;
     }
 
     public void Heal(float toHeal)

@@ -52,6 +52,8 @@ public class PlayerShield : MonoBehaviour
         {
             maxArmor = newArmor;
         }
+
+        currentArmorSlider.maxValue = maxArmor;
     }
 
     public void OnArmorRecoveryChange(float newArmorRecovery)

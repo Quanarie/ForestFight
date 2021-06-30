@@ -130,7 +130,7 @@ TextureImporter:
       name: Idle-Sheet_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 6
         y: 5
         width: 16
         height: 35
@@ -151,7 +151,7 @@ TextureImporter:
       name: Idle-Sheet_1
       rect:
         serializedVersion: 2
-        x: 30
+        x: 29
         y: 5
         width: 16
         height: 35
@@ -172,7 +172,7 @@ TextureImporter:
       name: Idle-Sheet_2
       rect:
         serializedVersion: 2
-        x: 54
+        x: 53
         y: 5
         width: 14
         height: 35

@@ -15,6 +15,5 @@ public class BarUpgrade : MonoBehaviour
             player.GetComponent<PlayerMoney>().CurrentMoney -= upgradeCost;
             GetComponent<Slider>().value += toUpgrade;
         }
-        else print("error");
     }
 }

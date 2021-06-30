@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  maxHealth: 3
+  maxHealth: 10
   moneyForKilling: 1
 --- !u!114 &6765627033714820739
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e922209cdbea4574cafacf1aa289b4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
   rechargeTime: 1
 --- !u!58 &3510042079450066351
 CircleCollider2D:
