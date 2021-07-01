@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class LIghtningPotion : MonoBehaviour, AbstractPotion
 {
+    [SerializeField] private GameObject lightning;
     [SerializeField] private float toDamage;
     [SerializeField] private float attackRadius;
 
     private Vector3 playerPosition;
     private GameObject[] enemies;
+    private float halfSpriteOfLightning;
+
+    private void Start()
+    {
+        halfSpriteOfLightning = lightning.GetComponent<SpriteRenderer>().sprite.rect.height / 2;
+        halfSpriteOfLightning /= lightning.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
+    }
 
     public void Use()
     {
@@ -31,6 +39,8 @@ public class LIghtningPotion : MonoBehaviour, AbstractPotion
         if (nearestEnemy != null)
         {
             nearestEnemy.GetComponent<EnemyHealth>().TakeDamage(toDamage);
+            GameObject newLightning = Instantiate(lightning);
+            newLightning.transform.position = new Vector3(nearestEnemy.transform.position.x, nearestEnemy.transform.position.y + halfSpriteOfLightning, nearestEnemy.transform.position.z);
         }
         Destroy(gameObject);
     }

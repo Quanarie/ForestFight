@@ -88,5 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a66e40705a3f20499c19b9c0e9ef756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toDamage: 3
-  attackRadius: 2
+  lightning: {fileID: 8528897769293172904, guid: 72b20830e87bd6448bf3b753c8310007, type: 3}
+  toDamage: 10
+  attackRadius: 5

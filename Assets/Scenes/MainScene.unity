@@ -8142,8 +8142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalPrefab: {fileID: 4546622299766577811, guid: 6d03a518a48fb8e48bec3447cf367654, type: 3}
-  minimalDistance: 2
-  maximalDistance: 2
+  minimalDistance: 10
+  maximalDistance: 20
   tilemaps:
   - {fileID: 192050269}
   - {fileID: 313422010}
