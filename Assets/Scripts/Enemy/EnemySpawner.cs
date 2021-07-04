@@ -24,12 +24,19 @@ public class EnemySpawner : MonoBehaviour
     {
         if (timeFromPreviousSpawn >= currentTimeBetweenSpawn)
         {
-            float randRadius = Random.Range(0, Vector3.Distance(target.position, transform.position) * spawnMultiplier);
+            /*float randRadius = Random.Range(0, Vector3.Distance(target.position, transform.position) * spawnMultiplier);
             float randAng = Random.Range(0, Mathf.PI * 2);
             Vector3 enemyPos = new Vector3(Mathf.Cos(randAng) * randRadius, Mathf.Sin(randAng) * randRadius, transform.position.z);
             enemyPos.x += transform.position.x;
-            enemyPos.y += transform.position.y;
+            enemyPos.y += transform.position.y;*/
+
+            Vector3 enemyPos = new Vector3();
+            enemyPos.x = Random.Range(transform.position.x, target.position.x);
+            enemyPos.y = Random.Range(transform.position.y, target.position.y);
+
             GameObject newEnemy = Instantiate(enemies[Random.Range(0, enemies.Length)], enemyPos, transform.rotation, enemiesParent);
+
+            /*if (newEnemy.GetComponent<Renderer>().isVisible)*/
 
             newEnemy.GetComponent<EnemyMovement>().SetTarget(target);
             newEnemy.GetComponent<EnemyHealth>().SetPlayer(target.gameObject);

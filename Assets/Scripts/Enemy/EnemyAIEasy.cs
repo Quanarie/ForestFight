@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyAIEasy : MonoBehaviour
 {
+    // Enemy goes away while recharging it's ability
+
     private float timeFromPreviousAttack;
     private float rechargeTime;
     private EnemyMovement enemyMovement;

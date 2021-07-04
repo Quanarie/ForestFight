@@ -89,4 +89,19 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+        set
+        {
+            if (value > 0)
+            {
+                speed = value;
+            }
+        }
+    }
 }
