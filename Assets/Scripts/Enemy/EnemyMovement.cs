@@ -10,6 +10,8 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 previousPosition;
     private Animator animator;
 
+    private bool isToPlayer = true;
+
     private void Start()
     {
         previousPosition = transform.position;
@@ -21,8 +23,16 @@ public class EnemyMovement : MonoBehaviour
         if (Vector3.Distance(player.position, transform.position) < player.gameObject.GetComponent<PlayerMovement>().UnhiddenDistance)
         {
             Vector3 direction = new Vector3();
-            direction.x = player.position.x - transform.position.x;
-            direction.y = player.position.y - transform.position.y;
+            if (isToPlayer)
+            {
+                direction.x = player.position.x - transform.position.x;
+                direction.y = player.position.y - transform.position.y;
+            }
+            else
+            {
+                direction.x = - player.position.x + transform.position.x;
+                direction.y = - player.position.y + transform.position.y;
+            }
 
             transform.Translate(direction.normalized * speed * Time.deltaTime);
 
@@ -47,6 +57,8 @@ public class EnemyMovement : MonoBehaviour
             previousPosition = transform.position;
         }
     }
+
+    public void SetDirection(bool isToPlayer) => this.isToPlayer = isToPlayer;
 
     public void SetTarget(Transform target)
     {

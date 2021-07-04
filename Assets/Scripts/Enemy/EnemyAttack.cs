@@ -7,7 +7,7 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float rechargeTime;
 
-    private float timeFromPreviousAttack;
+    private float timeFromPreviousAttack = 0f;
 
     private void Update()
     {
@@ -16,9 +16,9 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerShield _))
+        if (timeFromPreviousAttack >= rechargeTime)
         {
-            if (timeFromPreviousAttack >= rechargeTime)
+            if (collision.TryGetComponent(out PlayerShield _))
             {
                 collision.GetComponent<PlayerShield>().TakeDamage(damage);
 
@@ -28,4 +28,7 @@ public class EnemyAttack : MonoBehaviour
             }
         }
     }
+
+    public float GetTimeFromPreviousAttack() => timeFromPreviousAttack;
+    public float GetRechargeTime() => rechargeTime;
 }
