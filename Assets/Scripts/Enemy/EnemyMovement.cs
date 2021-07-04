@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private float speed;
+    [SerializeField] private CircleCollider2D attackCollider;
 
     private Vector3 previousPosition;
     private Animator animator;
@@ -20,7 +21,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(player.position, transform.position) < player.gameObject.GetComponent<PlayerMovement>().UnhiddenDistance)
+        if (Vector3.Distance(player.position, transform.position) < player.gameObject.GetComponent<PlayerMovement>().UnhiddenDistance &&
+            Vector3.Distance(player.position, transform.position) >= attackCollider.radius)
         {
             Vector3 direction = new Vector3();
             if (isToPlayer)

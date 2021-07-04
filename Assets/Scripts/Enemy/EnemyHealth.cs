@@ -9,10 +9,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float maxHealth;
     [SerializeField] private float moneyForKilling;
 
+    private Animator animator;
+
     private float currentHealth;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         currentHealth = maxHealth;
     }
 
@@ -23,6 +26,8 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth - damage > 0)
         {
             currentHealth -= damage;
+
+            animator.SetTrigger("damage");
         }
         else
         {

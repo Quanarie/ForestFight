@@ -129,6 +129,6 @@ MonoBehaviour:
   - {fileID: 6638328735409459330, guid: 00872949f99eed2419dacdabae2ac08c, type: 3}
   spawnMultiplier: 1.5
   minTimeBetweenSpawn: 1
-  maxTimeBetweenSpawn: 2
+  maxTimeBetweenSpawn: 5
   enemiesParent: {fileID: 0}
   target: {fileID: 0}

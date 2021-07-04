@@ -7,7 +7,14 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float rechargeTime;
 
+    private Animator animator;
+
     private float timeFromPreviousAttack = 0f;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -23,6 +30,8 @@ public class EnemyAttack : MonoBehaviour
                 collision.GetComponent<PlayerShield>().TakeDamage(damage);
 
                 collision.GetComponent<Animator>().SetTrigger("damage");
+
+                animator.SetTrigger("attack");
 
                 timeFromPreviousAttack = 0;
             }

@@ -41,11 +41,12 @@ public class PassiveEnemyMovement : MonoBehaviour
 
             if (transform.position == previousPosition)
             {
-                animator.SetBool("isRunning", false);
+                animator.SetBool("isWalking", false);
             }
             else
             {
-                animator.SetBool("isRunning", true);
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isWalking", true);
             }
 
             previousPosition = transform.position;
