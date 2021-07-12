@@ -6,39 +6,27 @@ using UnityEngine.Tilemaps;
 public class ObstacleGenerator : MonoBehaviour
 {
     [SerializeField] private Tilemap tilemap;
+    [SerializeField] private Tilemap groundTilemap;
     [SerializeField] private Tile[] obstacles;
-    [SerializeField] private float spawnDistance;   //distance that player should pass to spawn another obstacle
-    [SerializeField] private float spawnRadius;
-    [SerializeField] private float visibleRadius;
-
-    private float distanceFromPreviousSpawn = 0f;
-    private Vector3 previousPosition;
+    [SerializeField] private int squareSize;
 
     private void Start()
     {
-        previousPosition = transform.position;
+        for (int i = -squareSize; i < squareSize; i++)
+        {
+            for (int j = -squareSize; j < squareSize; j++)
+            {
+                Vector3Int newTilePos = new Vector3Int(i, j, 0);
+                if (groundTilemap.HasTile(newTilePos) && Random.value > 0.983f)
+                {
+                    tilemap.SetTile(newTilePos, obstacles[Random.Range(0, obstacles.Length)]);
+                }
+            }
+        }
     }
 
-    private void LateUpdate()
+    public void Restart()
     {
-        if (distanceFromPreviousSpawn >= spawnDistance)
-        {
-            Vector3Int obstaclePos = tilemap.WorldToCell(transform.position);
-            float randRadius = Random.Range(visibleRadius, spawnRadius);
-            float randAng = Random.Range(0, Mathf.PI * 2);
-            Vector3 obstacleOffset = new Vector3(Mathf.Cos(randAng) * randRadius, Mathf.Sin(randAng) * randRadius, transform.position.z);
-            obstaclePos.x += (int)transform.position.x + (int)obstacleOffset.x;
-            obstaclePos.y += (int)transform.position.y + (int)obstacleOffset.y;
-
-            tilemap.SetTile(obstaclePos, obstacles[Random.Range(0, obstacles.Length)]);
-
-            distanceFromPreviousSpawn = 0f;
-        }
-        else
-        {
-            distanceFromPreviousSpawn += Vector3.Distance(previousPosition, transform.position);
-        }
-
-        previousPosition = transform.position;
+        Start();
     }
 }

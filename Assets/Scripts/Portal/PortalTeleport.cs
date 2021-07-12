@@ -39,6 +39,9 @@ public class PortalTeleport : MonoBehaviour
             Destroy(potions.GetChild(child).gameObject);
         }
 
+        player.transform.position = new Vector3();
+        player.GetComponent<TerrainGenerator>().Restart();
+        player.GetComponent<ObstacleGenerator>().Restart();
         player.GetComponent<PortalSpawner>().Spawn();
         Destroy(gameObject);
     }
