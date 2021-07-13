@@ -39,4 +39,17 @@ public class PortalSpawner : MonoBehaviour
     {
         Start();
     }
+
+    public void Spawn(Vector3 pos)
+    {
+        GameObject newPortal = Instantiate(portalPrefab, pos, transform.rotation);
+        portalTeleport = newPortal.GetComponent<PortalTeleport>();
+
+        portalTeleport.SetTilemaps(tilemaps);
+        portalTeleport.SetPlayer(transform.gameObject);
+        portalTeleport.SetEnemies(enemies);
+        portalTeleport.SetPotions(potions);
+        portalTeleport.SetNewLevelText(newLevelText);
+        newPortal.GetComponent<EnemySpawner>().enabled = false;
+    }
 }

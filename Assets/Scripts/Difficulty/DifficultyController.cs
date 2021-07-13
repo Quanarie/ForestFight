@@ -6,6 +6,7 @@ public class DifficultyController : MonoBehaviour
 {
     private EnemySpawner enemySpawner;
     private const float diffMultiplierForMinMaxTime = 1.05f;
+    private static bool isBossSpawned = false;
 
     public void GameLvlChanged(int lvl)
     {
@@ -27,8 +28,16 @@ public class DifficultyController : MonoBehaviour
             case 4: break;
             case 5:
                 enemySpawner.SetLvlOfEnemies(4);
+                if (!isBossSpawned)
+                {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<BossSpawner>().Spawn();
+                    isBossSpawned = true;
+                    Destroy(gameObject);
+                }
                 break;
-            case 6: break;
+            case 6:
+                isBossSpawned = false;
+                break;
             case 7:
                 enemySpawner.SetLvlOfEnemies(5);
                 break;
@@ -47,14 +56,55 @@ public class DifficultyController : MonoBehaviour
             case 14: break;
             case 15:
                 enemySpawner.SetLvlOfEnemies(9);
+                if (!isBossSpawned)
+                {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<BossSpawner>().Spawn();
+                    isBossSpawned = true;
+                    Destroy(gameObject);
+                }
                 break;
-            case 16: break;
+            case 16:
+                isBossSpawned = false; 
+                break;
             case 17: break;
             case 18:
                 enemySpawner.SetLvlOfEnemies(10);
                 break;
             case 19: break;
             case 20: break;
+            case 25:
+                if (!isBossSpawned)
+                {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<BossSpawner>().Spawn();
+                    isBossSpawned = true;
+                    Destroy(gameObject);
+                }
+                break;
+            case 26:
+                isBossSpawned = false;
+                break;
+            case 35:
+                if (!isBossSpawned)
+                {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<BossSpawner>().Spawn();
+                    isBossSpawned = true;
+                    Destroy(gameObject);
+                }
+                break;
+            case 36:
+                isBossSpawned = false;
+                break;
+            case 45:
+                if (!isBossSpawned)
+                {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<BossSpawner>().Spawn();
+                    isBossSpawned = true;
+                    Destroy(gameObject);
+                }
+                break;
+            case 46:
+                isBossSpawned = false;
+                break;
         }
 
     }

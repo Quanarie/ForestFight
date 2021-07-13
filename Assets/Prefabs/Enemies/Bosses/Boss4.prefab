@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8477784048056986774}
   - component: {fileID: 3510042079450066351}
   - component: {fileID: -5350776584574723613}
+  - component: {fileID: 2277918233993595001}
   m_Layer: 6
   m_Name: Boss4
   m_TagString: Enemy
@@ -195,3 +196,15 @@ MonoBehaviour:
   speed: 1
   minTimeBetweenDirectionChange: 2
   maxTimeBetweenDirectionChange: 5
+--- !u!114 &2277918233993595001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6638328735409459330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b7c4356d9d38a46b28221467b458d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
