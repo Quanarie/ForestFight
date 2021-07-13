@@ -18,7 +18,7 @@ public class PlayerMoney : MonoBehaviour
         set
         {
             moneyValue = value;
-            moneyText.text = value.ToString();
+            moneyText.text = moneyValue.ToString();
         }
     }
 }

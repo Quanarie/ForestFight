@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private float maxHealth;
-    [SerializeField] private float moneyForKilling;
+    [SerializeField] private float experienceForKilling;
 
     private Animator animator;
 
@@ -31,7 +31,8 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
-            player.GetComponent<PlayerMoney>().CurrentMoney += moneyForKilling;
+            player.GetComponent<PlayerExperience>().CurrentExperience = player.GetComponent<PlayerExperience>().CurrentExperience + experienceForKilling;
+            player.GetComponent<PlayerMoney>().CurrentMoney = player.GetComponent<PlayerMoney>().CurrentMoney + 1;
             Destroy(gameObject);
         }
     }

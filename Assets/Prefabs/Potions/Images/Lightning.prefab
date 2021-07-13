@@ -89,5 +89,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightning: {fileID: 8528897769293172904, guid: 72b20830e87bd6448bf3b753c8310007, type: 3}
-  toDamage: 10
+  toDamage: 100
   attackRadius: 5
