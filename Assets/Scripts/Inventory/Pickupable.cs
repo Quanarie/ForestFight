@@ -9,16 +9,19 @@ public class Pickupable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        for (int i = 0; i < inventory.IsFull.Length; i++)
+        if (collision.TryGetComponent(out PlayerMoney _))
         {
-            if (inventory.IsFull[i] == false)
+            for (int i = 0; i < inventory.IsFull.Length; i++)
             {
-                bool[] tempArray = inventory.IsFull;
-                tempArray[i] = true;
-                inventory.IsFull = tempArray;
-                Instantiate(objectImage, inventory.Slots[i].transform);
-                Destroy(gameObject);
-                break;
+                if (inventory.IsFull[i] == false)
+                {
+                    bool[] tempArray = inventory.IsFull;
+                    tempArray[i] = true;
+                    inventory.IsFull = tempArray;
+                    Instantiate(objectImage, inventory.Slots[i].transform);
+                    Destroy(gameObject);
+                    break;
+                }
             }
         }
     }
