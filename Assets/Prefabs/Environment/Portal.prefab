@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2248649902282135557}
   - component: {fileID: -6975583379678248826}
   - component: {fileID: -3311999128484250635}
+  - component: {fileID: -6884198764265590716}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -127,8 +128,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 6638328735409459330, guid: 00872949f99eed2419dacdabae2ac08c, type: 3}
+  - {fileID: 6638328735409459330, guid: ceb7cb734d11def49a32bc12443d7de6, type: 3}
+  - {fileID: 6638328735409459330, guid: 15ae10298489a804abb053f4312d85bd, type: 3}
+  - {fileID: 6638328735409459330, guid: ee1333440ff19b348a282f3c6756094a, type: 3}
+  - {fileID: 6638328735409459330, guid: 7e7322ad3b934e34ba6a108cd21b4c7e, type: 3}
+  - {fileID: 6638328735409459330, guid: ffc02cd00cec58a48b732687e199d35f, type: 3}
+  - {fileID: 6638328735409459330, guid: 116285ebfc7100a4aac07a7639c78946, type: 3}
+  - {fileID: 6638328735409459330, guid: e45578d141a75ae438680a15c95aee8a, type: 3}
+  - {fileID: 6638328735409459330, guid: 82ac05a510c1f5d4a906a73230ad10e2, type: 3}
+  - {fileID: 6638328735409459330, guid: 6ab0f9d545fb3e44ebab1d5c080d5db2, type: 3}
   spawnMultiplier: 1.5
-  minTimeBetweenSpawn: 1
-  maxTimeBetweenSpawn: 5
+  minTimeBetweenSpawn: 4
+  maxTimeBetweenSpawn: 8
   enemiesParent: {fileID: 0}
   target: {fileID: 0}
+--- !u!114 &-6884198764265590716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546622299766577811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e9de3492851ea4d9416b595f26a241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

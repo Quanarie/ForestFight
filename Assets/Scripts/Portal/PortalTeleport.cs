@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Tilemaps;
+using TMPro;
 
 public class PortalTeleport : MonoBehaviour
 {
@@ -9,8 +11,16 @@ public class PortalTeleport : MonoBehaviour
     private Tilemap[] tilemaps;
     private Transform enemies;
     private Transform potions;
+    private TextMeshProUGUI newLevelText;
 
     private const float portalAnimationTime = 1f;
+
+    public static int IngameLvl = 1;
+
+    private void Start()
+    {
+        GetComponent<DifficultyController>().GameLvlChanged(IngameLvl);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,6 +28,9 @@ public class PortalTeleport : MonoBehaviour
         {
             collision.GetComponent<Animator>().SetTrigger("portal");
 
+            IngameLvl++;
+            newLevelText.text = "Level: " + IngameLvl.ToString();
+            
             StartCoroutine(WaitForAnimationToEndAndTeleport());
         }
     }
@@ -44,6 +57,7 @@ public class PortalTeleport : MonoBehaviour
         player.GetComponent<ObstacleGenerator>().Restart();
         player.GetComponent<PotionGenerator>().Restart();
         player.GetComponent<PortalSpawner>().Spawn();
+        newLevelText.text = "";
         Destroy(gameObject);
     }
 
@@ -51,4 +65,5 @@ public class PortalTeleport : MonoBehaviour
     public void SetPlayer(GameObject P) => player = P;
     public void SetEnemies(Transform E) => enemies = E;
     public void SetPotions(Transform P) => potions = P;
+    public void SetNewLevelText(TextMeshProUGUI T) => newLevelText = T;
 }

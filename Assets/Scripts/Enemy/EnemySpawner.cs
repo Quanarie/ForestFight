@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
 
     private float currentTimeBetweenSpawn;
     private float timeFromPreviousSpawn = 0f;
+    private int maxLvlOfEnemy;
 
     private void Start()
     {
@@ -24,17 +25,11 @@ public class EnemySpawner : MonoBehaviour
     {
         if (timeFromPreviousSpawn >= currentTimeBetweenSpawn)
         {
-            /*float randRadius = Random.Range(0, Vector3.Distance(target.position, transform.position) * spawnMultiplier);
-            float randAng = Random.Range(0, Mathf.PI * 2);
-            Vector3 enemyPos = new Vector3(Mathf.Cos(randAng) * randRadius, Mathf.Sin(randAng) * randRadius, transform.position.z);
-            enemyPos.x += transform.position.x;
-            enemyPos.y += transform.position.y;*/
-
             Vector3 enemyPos = new Vector3();
             enemyPos.x = Random.Range(transform.position.x, target.position.x);
             enemyPos.y = Random.Range(transform.position.y, target.position.y);
 
-            GameObject newEnemy = Instantiate(enemies[Random.Range(0, enemies.Length)], enemyPos, transform.rotation, enemiesParent);
+            GameObject newEnemy = Instantiate(enemies[Random.Range(0, maxLvlOfEnemy)], enemyPos, transform.rotation, enemiesParent);
 
             /*if (newEnemy.GetComponent<Renderer>().isVisible)*/
 
@@ -49,5 +44,11 @@ public class EnemySpawner : MonoBehaviour
             timeFromPreviousSpawn += Time.deltaTime;
         }
     }
+
     public void SetEnemies(Transform enemiesParent) => this.enemiesParent = enemiesParent;
+    public void SetLvlOfEnemies(int L) => maxLvlOfEnemy = L;
+    public void SetMinTimeBetweenSpawn(float M) => minTimeBetweenSpawn = M;
+    public void SetMaxTimeBetweenSpawn(float M) => maxTimeBetweenSpawn = M;
+    public float GetMinTimeBetweenSpawn() => minTimeBetweenSpawn;
+    public float GetMaxTimeBetweenSpawn() => maxTimeBetweenSpawn;
 }
