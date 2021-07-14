@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class SlowDownEffect : MonoBehaviour
 {
+    [SerializeField] private float lifetime;
     [SerializeField] private float radius;
     [SerializeField] private float speedSlowerMultiplier;
+
+    private void Start()
+    {
+        Destroy(gameObject, lifetime);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

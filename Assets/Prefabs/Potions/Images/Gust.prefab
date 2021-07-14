@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 838586694271798284}
   - component: {fileID: 838586694271798282}
   - component: {fileID: 838586694271798285}
+  - component: {fileID: -2001518587390874988}
   m_Layer: 5
-  m_Name: Flash
+  m_Name: Gust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,3 +76,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-2001518587390874988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838586694271798287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c944a2b2887294dadd87cce94a29b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 8528897769293172904, guid: 1ef98fb1fa071844c98fc21dc4b2a579, type: 3}
