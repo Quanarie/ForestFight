@@ -10,12 +10,16 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float rechargeTime;
     [SerializeField] private LayerMask attackableObjects;
 
+    public float percentOfVampireHeal { get; set; }
+    public bool isVampiring { get; set; }
+
     private Animator animator;
     private float timeFromPreviousAttack = 0f;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        isVampiring = false;
     }
     private void Update()
     {
@@ -30,6 +34,7 @@ public class PlayerAttack : MonoBehaviour
             if (enemies.Length > 0)
             {
                 enemies[0].GetComponent<EnemyHealth>().TakeDamage(damage);
+                if (isVampiring) GetComponent<PlayerHealth>().Heal(damage * percentOfVampireHeal);
             }
 
             animator.SetTrigger("attack");
