@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 838586694271798284}
   - component: {fileID: 838586694271798282}
   - component: {fileID: 838586694271798285}
+  - component: {fileID: -828189699492413781}
   m_Layer: 5
   m_Name: Flash
   m_TagString: Untagged
@@ -75,3 +76,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-828189699492413781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838586694271798287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c944a2b2887294dadd87cce94a29b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 8528897769293172904, guid: 5eb589dad0412f843b2f06a0efa8f3e8, type: 3}
