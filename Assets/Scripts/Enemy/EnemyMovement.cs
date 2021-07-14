@@ -69,6 +69,12 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    public float Speed
+    {
+        get { return speed; }
+        set { speed = value; }
+    }
+
     public void SetDirection(bool isToPlayer) => this.isToPlayer = isToPlayer;
 
     public void SetTarget(Transform target)
