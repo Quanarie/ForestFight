@@ -83,10 +83,7 @@ public class PlayerMovement : MonoBehaviour
         }
         set
         {
-            if (value > 0)
-            {
-                unhiddenDistance = value;
-            }
+            unhiddenDistance = value;
         }
     }
 

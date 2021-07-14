@@ -18,6 +18,6 @@ public class SlowDownPotion : MonoBehaviour, AbstractPotion
     {
         GameObject slowDownEffect = Instantiate(effect, player.transform.position, transform.rotation);
         Destroy(slowDownEffect, lifeTime);
-
+        Destroy(gameObject);
     }
 }
