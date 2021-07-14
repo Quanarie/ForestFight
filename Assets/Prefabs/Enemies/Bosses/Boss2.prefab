@@ -124,6 +124,7 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 3
   attackCollider: {fileID: 3510042079450066351}
+  RENDanger: 11
 --- !u!114 &6638328735409459342
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,11 +7,13 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float speed;
     [SerializeField] private CircleCollider2D attackCollider;
+    [SerializeField] private float RENDanger;
 
     private Vector3 previousPosition;
     private Animator animator;
 
     private bool isToPlayer = true;
+    private bool isScared = false;
 
     private void Start()
     {
@@ -21,11 +23,18 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(player.position, transform.position) < player.gameObject.GetComponent<PlayerMovement>().UnhiddenDistance &&
-            Vector3.Distance(player.position, transform.position) >= attackCollider.radius)
+        float distance = Vector3.Distance(player.position, transform.position);
+        if (distance < player.gameObject.GetComponent<PlayerMovement>().UnhiddenDistance &&
+            distance >= attackCollider.radius)
         {
+
+            if (distance < player.gameObject.GetComponent<REN>().GetDangerRadius())
+            {
+                if (RENDanger < player.gameObject.GetComponent<REN>().GetDanger()) isScared = true;
+            }
+
             Vector3 direction = new Vector3();
-            if (isToPlayer)
+            if (isToPlayer && !isScared)
             {
                 direction.x = player.position.x - transform.position.x;
                 direction.y = player.position.y - transform.position.y;
