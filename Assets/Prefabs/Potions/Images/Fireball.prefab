@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 838586694271798284}
   - component: {fileID: 838586694271798282}
   - component: {fileID: 838586694271798285}
+  - component: {fileID: 8169056188552682831}
   m_Layer: 5
-  m_Name: Flash
+  m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,3 +76,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8169056188552682831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838586694271798287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8559e1d85ac40246b44baef45246549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 8528897769293172904, guid: ce7bd54d28b7df941abe2f3bdf65e122, type: 3}
