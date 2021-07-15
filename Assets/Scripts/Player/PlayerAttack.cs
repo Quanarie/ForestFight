@@ -57,4 +57,16 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
+
+    public float RechargeTime
+    {
+        get
+        {
+            return rechargeTime;
+        }
+        set
+        {
+            rechargeTime = value;
+        }
+    }
 }

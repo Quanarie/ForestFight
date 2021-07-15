@@ -12,6 +12,11 @@ public class PlayerHealth : MonoBehaviour
 
     private float currentHealth;
 
+    public delegate void MonsterDeath();
+    public event MonsterDeath OnDeathWhenIsMonster;
+    public bool isMonster { get; set; }
+
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -29,6 +34,10 @@ public class PlayerHealth : MonoBehaviour
             currentHealth -= damage;
 
             healthSlider.value = currentHealth;
+        }
+        else if (isMonster)
+        {
+            OnDeathWhenIsMonster?.Invoke();
         }
         else
         {
@@ -61,5 +70,19 @@ public class PlayerHealth : MonoBehaviour
 
             healthSlider.value = currentHealth;
         }
+    }
+
+    public Slider GetHealthSlider() => healthSlider;
+
+    public float MaxHealth
+    {
+        get => maxHealth;
+        set => maxHealth = value;
+    }
+
+    public float CurrentHealth
+    {
+        get => currentHealth;
+        set => currentHealth = value;
     }
 }

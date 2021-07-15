@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 838586694271798284}
   - component: {fileID: 838586694271798282}
   - component: {fileID: 838586694271798285}
+  - component: {fileID: 1428857691159772916}
   m_Layer: 5
-  m_Name: Flash
+  m_Name: Transformation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,3 +76,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1428857691159772916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838586694271798287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252f69b4fdd93cf46a56084885603504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 6638328735409459330, guid: 00872949f99eed2419dacdabae2ac08c, type: 3}
+  enemiesControllers:
+  - {fileID: 9100000, guid: 9ab5dcdbd0c7f1d4b828e3708b4d8dfc, type: 2}
+  actionTime: 5
+  playerAnimatorNEN: {fileID: 9100000, guid: 8fa0efb6729cdd243acfe54fcf786246, type: 2}
+  playerAnimatorREN: {fileID: 9100000, guid: 16e4b64f96773a34ca8e88055061f565, type: 2}
+  playerAnimatorZETSU: {fileID: 9100000, guid: 33d561f6d3c774346bd0ffafba71cb2c, type: 2}

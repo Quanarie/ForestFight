@@ -45,20 +45,30 @@ public class NENChanger : MonoBehaviour
         {
             ZETSUField.SetActive(false);
             NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[0];
-            GetComponent<Animator>().runtimeAnimatorController = NENAnimator;
+            if (GetComponent<Animator>().runtimeAnimatorController == ZETSUAnimator)
+            {
+                GetComponent<Animator>().runtimeAnimatorController = NENAnimator;
+
+            }
         }
         else if (currentAbility == 1)
         {
             RENBackground.SetActive(true);
             NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[1];
-            GetComponent<Animator>().runtimeAnimatorController = RENAnimator;
+            if (GetComponent<Animator>().runtimeAnimatorController == NENAnimator)
+            {
+                GetComponent<Animator>().runtimeAnimatorController = RENAnimator;
+            }
         }
         else
         {
             ZETSUField.SetActive(true);
             RENBackground.SetActive(false);
             NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[2];
-            GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
+            if (GetComponent<Animator>().runtimeAnimatorController == RENAnimator)
+            {
+                GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
+            }
         }
     }
 
@@ -94,5 +104,10 @@ public class NENChanger : MonoBehaviour
             NENButton.GetComponent<Image>().sprite = NENAbilitiesBackgrounds[2];
             GetComponent<Animator>().runtimeAnimatorController = ZETSUAnimator;
         }
+    }
+
+    public int GetCurrentAbility()
+    {
+        return currentAbility;
     }
 }

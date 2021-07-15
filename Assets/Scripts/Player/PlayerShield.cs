@@ -13,6 +13,8 @@ public class PlayerShield : MonoBehaviour
 
     private float currentArmor;
 
+    public bool isMonster { get; set; }
+
     private void Start()
     {
         currentArmor = maxArmor;
@@ -20,6 +22,7 @@ public class PlayerShield : MonoBehaviour
         currentArmorSlider.maxValue = maxArmor;
         maxArmorUpgradeSlider.value = maxArmor;
         armorRecoveryUpgradeSlider.value = recoverySpeed;
+        isMonster = false;
     }
 
     private void Update()
@@ -34,8 +37,12 @@ public class PlayerShield : MonoBehaviour
     public void TakeDamage(float damage)
     {
         DamageDisplay.Instance.AddText((int)damage, transform.position);
-        
-        if (currentArmor - damage >= 0)
+
+        if (isMonster)
+        {
+            GetComponent<PlayerHealth>().TakeDamage(damage);
+        }
+        else if (currentArmor - damage >= 0)
         {
             currentArmor -= damage;
             currentArmorSlider.value = currentArmor;
@@ -78,6 +85,8 @@ public class PlayerShield : MonoBehaviour
             }
         }
     }
+
+    public Slider GetArmorSlider() => currentArmorSlider;
 
     public float CurrentArmor
     {

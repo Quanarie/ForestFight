@@ -44,4 +44,14 @@ public class EnemyHealth : MonoBehaviour
             this.player = player;
         }
     }
+
+    public float MaxHealth
+    {
+        get => maxHealth;
+    }
+
+    public float CurrentHealth
+    {
+        get => currentHealth;
+    }
 }

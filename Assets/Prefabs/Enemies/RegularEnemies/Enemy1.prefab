@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e922209cdbea4574cafacf1aa289b4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 100
   rechargeTime: 1
 --- !u!114 &8477784048056986774
 MonoBehaviour:

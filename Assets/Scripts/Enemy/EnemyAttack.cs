@@ -40,4 +40,5 @@ public class EnemyAttack : MonoBehaviour
 
     public float GetTimeFromPreviousAttack() => timeFromPreviousAttack;
     public float GetRechargeTime() => rechargeTime;
+    public float GetDamage() => damage;
 }
