@@ -9,8 +9,7 @@ public class PortalTeleport : MonoBehaviour
 {
     private GameObject player;
     private Tilemap[] tilemaps;
-    private Transform enemies;
-    private Transform potions;
+    private List<Transform> toClear = new List<Transform>();
     private TextMeshProUGUI newLevelText;
 
     private const float portalAnimationTime = 1f;
@@ -53,20 +52,21 @@ public class PortalTeleport : MonoBehaviour
         {
             tilemap.ClearAllTiles();
         }
-        for (int child = 0; child < enemies.childCount; child++)
-        {
-            Destroy(enemies.GetChild(child).gameObject);
-        }
-        for (int child = 0; child < potions.childCount; child++)
-        {
-            Destroy(potions.GetChild(child).gameObject);
-        }
 
+        foreach(Transform target in toClear)
+        {
+            for (int child = 0; child < target.childCount; child++)
+            {
+                Destroy(target.GetChild(child).gameObject);
+            }
+        }
+        
         player.transform.position = new Vector3();
         player.GetComponent<TerrainGenerator>().Restart();
         player.GetComponent<ObstacleGenerator>().Restart();
         player.GetComponent<PotionGenerator>().Restart();
         player.GetComponent<PortalSpawner>().Spawn();
+        player.GetComponent<RoomSpawner>().Spawn();
         newLevelText.text = "";
         Destroy(gameObject);
     }
@@ -81,7 +81,6 @@ public class PortalTeleport : MonoBehaviour
     public void SetExpToEarn(float E) => expToEarn = E;
     public void SetTilemaps(Tilemap[] TM) => tilemaps = TM;
     public void SetPlayer(GameObject P) => player = P;
-    public void SetEnemies(Transform E) => enemies = E;
-    public void SetPotions(Transform P) => potions = P;
+    public void SetToClear(Transform E) => toClear.Add(E);
     public void SetNewLevelText(TextMeshProUGUI T) => newLevelText = T;
 }

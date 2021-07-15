@@ -16,6 +16,7 @@ public class RoomSpawner : MonoBehaviour
     [SerializeField] private Transform enemiesParent;
     [SerializeField] private float difficulty;
     [SerializeField] private Inventory inventory;
+    [SerializeField] private Transform roomsParent;
 
     private EnemySpawner currentEnemySpawner;
 
@@ -43,7 +44,7 @@ public class RoomSpawner : MonoBehaviour
                 roomPos.y = Random.Range(rightDownCoord.y, leftUpCoord.y);
             }
             
-            GameObject newRoom = Instantiate(room, roomPos, transform.rotation);
+            GameObject newRoom = Instantiate(room, roomPos, transform.rotation, roomsParent);
             EnemySpawnerForRooms enemySpawner = newRoom.GetComponent<EnemySpawnerForRooms>();
 
             enemySpawner.SetMinTimeBetweenSpawn(minTimeBetweenSpawn);
@@ -54,5 +55,10 @@ public class RoomSpawner : MonoBehaviour
             enemySpawner.SetInventory(inventory);
             enemySpawner.SetMaxNumberOfEnemies(Random.Range(minNumberOfMobs, maxNumberOfMobs));
         }
+    }
+
+    public void Spawn()
+    {
+        Start();
     }
 }

@@ -86,7 +86,7 @@ public class EnemySpawnerForRooms : MonoBehaviour
             Vector2 randVect = Random.insideUnitCircle;
             potionPos.x += randVect.x;
             potionPos.y += randVect.y;
-            GameObject newPotion = Instantiate(potions[Random.Range(0, potions.Length)], potionPos, transform.rotation);
+            GameObject newPotion = Instantiate(potions[Random.Range(0, Mathf.Min(PlayerExperience.Lvl * 2, potions.Length))], potionPos, transform.rotation);   // *2 !!!
             newPotion.GetComponent<Pickupable>().SetInventory(inventory);
         }
 

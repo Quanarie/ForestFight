@@ -11,7 +11,7 @@ public class PortalSpawner : MonoBehaviour
     [SerializeField] private float maximalDistance;
     [SerializeField] private Tilemap[] tilemaps;
     [SerializeField] private Transform enemies;
-    [SerializeField] private Transform potions;
+    [SerializeField] private List<Transform> toClear;
     [SerializeField] private TextMeshProUGUI newLevelText;
     [SerializeField] private float expToEarn;
     [SerializeField] private float expMultiplier;
@@ -31,8 +31,10 @@ public class PortalSpawner : MonoBehaviour
 
         portalTeleport.SetTilemaps(tilemaps);
         portalTeleport.SetPlayer(transform.gameObject);
-        portalTeleport.SetEnemies(enemies);
-        portalTeleport.SetPotions(potions);
+        foreach (Transform target in toClear)
+        {
+            portalTeleport.SetToClear(target);
+        }
         portalTeleport.SetNewLevelText(newLevelText);
         portalTeleport.SetExpToEarn(expToEarn);
         newPortal.GetComponent<EnemySpawner>().SetEnemies(enemies);
@@ -52,8 +54,10 @@ public class PortalSpawner : MonoBehaviour
 
         portalTeleport.SetTilemaps(tilemaps);
         portalTeleport.SetPlayer(transform.gameObject);
-        portalTeleport.SetEnemies(enemies);
-        portalTeleport.SetPotions(potions);
+        foreach(Transform target in toClear)
+        {
+            portalTeleport.SetToClear(target);
+        }
         portalTeleport.SetNewLevelText(newLevelText);
         portalTeleport.SetExpToEarn(0);
         newPortal.GetComponent<EnemySpawner>().enabled = false;
