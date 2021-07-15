@@ -29,7 +29,6 @@ public class EfirPlanePotion : MonoBehaviour, AbstractPotion
     {
         yield return new WaitForSeconds(lifetime);
 
-        efirBackground.SetActive(false);
         player.GetComponent<PlayerMovement>().UnhiddenDistance *= -1;
 
         Destroy(gameObject);
