@@ -11,7 +11,7 @@ public class PotionGenerator : MonoBehaviour
     [SerializeField] private Inventory inventory;
     [SerializeField] private int squareSize;
 
-    private const float chanceOfSpawn = 0.99f;
+    private const float chanceOfSpawn = 0.999f;
 
     private void Start()
     {

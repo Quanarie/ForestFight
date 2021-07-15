@@ -15,6 +15,8 @@ public class PortalTeleport : MonoBehaviour
 
     private const float portalAnimationTime = 1f;
 
+    private float expToEarn;
+
     public static int IngameLvl = 1;
 
     private void Start()
@@ -26,12 +28,20 @@ public class PortalTeleport : MonoBehaviour
     {
         if (collision.TryGetComponent(out PlayerMovement _))
         {
-            collision.GetComponent<Animator>().SetTrigger("portal");
+            if (player.GetComponent<PlayerExperience>().AllExperience >= expToEarn)
+            {
+                collision.GetComponent<Animator>().SetTrigger("portal");
 
-            IngameLvl++;
-            newLevelText.text = "Level: " + IngameLvl.ToString();
-            
-            StartCoroutine(WaitForAnimationToEndAndTeleport());
+                IngameLvl++;
+                newLevelText.text = "Level: " + IngameLvl.ToString();
+
+                StartCoroutine(WaitForAnimationToEndAndTeleport());
+            }
+            else
+            {
+                newLevelText.text = player.GetComponent<PlayerExperience>().AllExperience + " / " + expToEarn;
+                StartCoroutine(deleteText());
+            }
         }
     }
 
@@ -61,6 +71,14 @@ public class PortalTeleport : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private IEnumerator deleteText()
+    {
+        yield return new WaitForSeconds(portalAnimationTime);
+
+        newLevelText.text = "";
+    }
+
+    public void SetExpToEarn(float E) => expToEarn = E;
     public void SetTilemaps(Tilemap[] TM) => tilemaps = TM;
     public void SetPlayer(GameObject P) => player = P;
     public void SetEnemies(Transform E) => enemies = E;

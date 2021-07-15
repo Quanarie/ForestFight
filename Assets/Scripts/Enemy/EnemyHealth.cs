@@ -33,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
         {
             player.GetComponent<PlayerExperience>().CurrentExperience = player.GetComponent<PlayerExperience>().CurrentExperience + experienceForKilling;
             player.GetComponent<PlayerMoney>().CurrentMoney = player.GetComponent<PlayerMoney>().CurrentMoney + 1;
+
             Destroy(gameObject);
         }
     }

@@ -137,9 +137,8 @@ MonoBehaviour:
   - {fileID: 6638328735409459330, guid: e45578d141a75ae438680a15c95aee8a, type: 3}
   - {fileID: 6638328735409459330, guid: 82ac05a510c1f5d4a906a73230ad10e2, type: 3}
   - {fileID: 6638328735409459330, guid: 6ab0f9d545fb3e44ebab1d5c080d5db2, type: 3}
-  spawnMultiplier: 1.5
-  minTimeBetweenSpawn: 4
-  maxTimeBetweenSpawn: 8
+  minTimeBetweenSpawn: 7
+  maxTimeBetweenSpawn: 15
   enemiesParent: {fileID: 0}
   target: {fileID: 0}
 --- !u!114 &-6884198764265590716

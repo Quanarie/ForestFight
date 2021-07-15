@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 838586694271798284}
   - component: {fileID: 838586694271798282}
   - component: {fileID: 838586694271798285}
+  - component: {fileID: 6251575627627701218}
   m_Layer: 5
-  m_Name: Flash
+  m_Name: ControllableFireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,3 +76,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6251575627627701218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838586694271798287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c944a2b2887294dadd87cce94a29b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 8528897769293172904, guid: 479fa97047a96704c82d5ef4863ee06c, type: 3}
+  spawnOffset: {x: 0, y: 1.5, z: 0}

@@ -13,10 +13,12 @@ public class PortalSpawner : MonoBehaviour
     [SerializeField] private Transform enemies;
     [SerializeField] private Transform potions;
     [SerializeField] private TextMeshProUGUI newLevelText;
+    [SerializeField] private float expToEarn;
+    [SerializeField] private float expMultiplier;
 
     private PortalTeleport portalTeleport;
 
-    private void Start()
+    private void Awake()
     {
         float randRadius = Random.Range(minimalDistance, maximalDistance);
         float randAng = Random.Range(0, Mathf.PI * 2);
@@ -32,12 +34,15 @@ public class PortalSpawner : MonoBehaviour
         portalTeleport.SetEnemies(enemies);
         portalTeleport.SetPotions(potions);
         portalTeleport.SetNewLevelText(newLevelText);
+        portalTeleport.SetExpToEarn(expToEarn);
         newPortal.GetComponent<EnemySpawner>().SetEnemies(enemies);
+
+        expToEarn *= expMultiplier;
     }
 
     public void Spawn()
     {
-        Start();
+        Awake();
     }
 
     public void Spawn(Vector3 pos)
@@ -50,6 +55,7 @@ public class PortalSpawner : MonoBehaviour
         portalTeleport.SetEnemies(enemies);
         portalTeleport.SetPotions(potions);
         portalTeleport.SetNewLevelText(newLevelText);
+        portalTeleport.SetExpToEarn(0);
         newPortal.GetComponent<EnemySpawner>().enabled = false;
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemies;
-    [SerializeField] private float spawnMultiplier;
     [SerializeField] private float minTimeBetweenSpawn;
     [SerializeField] private float maxTimeBetweenSpawn;
     [SerializeField] private Transform enemiesParent;
@@ -14,6 +13,8 @@ public class EnemySpawner : MonoBehaviour
     private float currentTimeBetweenSpawn;
     private float timeFromPreviousSpawn = 0f;
     private int maxLvlOfEnemy;
+
+    public int enemiesDied { get; set; }
 
     private void Start()
     {
@@ -47,6 +48,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SetEnemies(Transform enemiesParent) => this.enemiesParent = enemiesParent;
     public void SetLvlOfEnemies(int L) => maxLvlOfEnemy = L;
+    public int GetLvlOfEnemies() => maxLvlOfEnemy;
     public void SetMinTimeBetweenSpawn(float M) => minTimeBetweenSpawn = M;
     public void SetMaxTimeBetweenSpawn(float M) => maxTimeBetweenSpawn = M;
     public float GetMinTimeBetweenSpawn() => minTimeBetweenSpawn;

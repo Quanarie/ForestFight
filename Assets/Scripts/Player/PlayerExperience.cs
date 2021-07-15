@@ -42,4 +42,20 @@ public class PlayerExperience : MonoBehaviour
             expText.text = experienceSlider.value.ToString() + " / " + experienceSlider.maxValue.ToString();
         }
     }
+
+    public float AllExperience
+    {
+        get
+        {
+            int lvl = Lvl - 1;
+            float exp = 0;
+            while (lvl > 0)
+            {
+                exp += Mathf.Pow(2, lvl);
+                lvl--;
+            }
+            exp += CurrentExperience;
+            return exp;
+        }
+    }
 }
