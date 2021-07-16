@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.033422947, a: 1}
+  m_Sprite: {fileID: 21300000, guid: a013c113d07173142ad933489dc2f773, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,9 +97,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6638328735409459330}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9ab5dcdbd0c7f1d4b828e3708b4d8dfc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 556ff881777111641b7304a005bf1082, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 3
+  speed: 2
   attackCollider: {fileID: 3510042079450066351}
   RENDanger: 2
 --- !u!114 &6638328735409459342
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  maxHealth: 100
+  maxHealth: 200
   experienceForKilling: 10
 --- !u!114 &6765627033714820739
 MonoBehaviour:
@@ -166,9 +166,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.28991222, y: 0.014336348}
+  m_Offset: {x: 0.84833145, y: 0.014336348}
   serializedVersion: 2
-  m_Radius: 0.3668828
+  m_Radius: 1.4697139
 --- !u!114 &-5350776584574723613
 MonoBehaviour:
   m_ObjectHideFlags: 0
