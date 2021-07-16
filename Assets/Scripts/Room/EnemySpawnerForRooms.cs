@@ -15,29 +15,25 @@ public class EnemySpawnerForRooms : MonoBehaviour
     private float currentTimeBetweenSpawn;
     private float timeFromPreviousSpawn = 0f;
     private int maxNumberOfEnemies;
-    private int currentNumberOfEnemies;
+    private int currentNumberOfEnemies = 0;
     private int maxLvlOfEnemy;
     private bool canSpawn;
     private const int potionNumber = 3;
 
     private GameObject lastEnemy;
 
-    private GameObject portal;
-
     private void Start()
     {
         currentTimeBetweenSpawn = Random.Range(minTimeBetweenSpawn, maxTimeBetweenSpawn);
         target = GameObject.FindGameObjectWithTag("Player").transform;
         canSpawn = false;
-
-        portal = GameObject.FindGameObjectWithTag("Portal");
     }
 
     private void Update()
     {
         if (canSpawn)
         {
-            portal.GetComponent<EnemySpawner>().enabled = false;
+            GameObject.FindGameObjectWithTag("Portal").GetComponent<EnemySpawner>().enabled = false;
 
             if (timeFromPreviousSpawn >= currentTimeBetweenSpawn && currentNumberOfEnemies <= maxNumberOfEnemies)
             {
@@ -86,11 +82,11 @@ public class EnemySpawnerForRooms : MonoBehaviour
             Vector2 randVect = Random.insideUnitCircle;
             potionPos.x += randVect.x;
             potionPos.y += randVect.y;
-            GameObject newPotion = Instantiate(potions[Random.Range(0, Mathf.Min(PlayerExperience.Lvl * 2, potions.Length))], potionPos, transform.rotation);   // *2 !!!
+            GameObject newPotion = Instantiate(potions[Random.Range(0, Mathf.Min(PlayerExperience.Lvl, potions.Length))], potionPos, transform.rotation);
             newPotion.GetComponent<Pickupable>().SetInventory(inventory);
         }
 
-        portal.GetComponent<EnemySpawner>().enabled = true;
+        GameObject.FindGameObjectWithTag("Portal").GetComponent<EnemySpawner>().enabled = true;
     }
 
     public void SetInventory(Inventory I) => inventory = I;

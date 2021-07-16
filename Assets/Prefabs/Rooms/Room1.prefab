@@ -72,7 +72,21 @@ MonoBehaviour:
   - {fileID: 6638328735409459330, guid: e45578d141a75ae438680a15c95aee8a, type: 3}
   - {fileID: 6638328735409459330, guid: 82ac05a510c1f5d4a906a73230ad10e2, type: 3}
   - {fileID: 6638328735409459330, guid: 6ab0f9d545fb3e44ebab1d5c080d5db2, type: 3}
-  potions: []
+  potions:
+  - {fileID: 6308795470939233182, guid: 50e918cbceaa1bd4194ba4a5aab43064, type: 3}
+  - {fileID: 6146811133726165489, guid: 0ef37af2722c8c14f975b5601933e3e8, type: 3}
+  - {fileID: 6308795470939233182, guid: 49b8699a3a0d4d4429f1c424ee608882, type: 3}
+  - {fileID: 6308795470939233182, guid: ead5b24aca8c1024081dea7d925dcaeb, type: 3}
+  - {fileID: 6308795470939233182, guid: 9247c19e4840846488b59d691e064caa, type: 3}
+  - {fileID: 6674433463340141576, guid: 1fc92f5d4838d254eb2092b5b45b1255, type: 3}
+  - {fileID: 6146811133726165489, guid: 9f8cea1675c986c439f665bc7a7c5188, type: 3}
+  - {fileID: 6308795470939233182, guid: f25a69f364a803b4c83b9b3d174fcac3, type: 3}
+  - {fileID: 6308795470939233182, guid: 7c9a93394bc86a241832605231336f9c, type: 3}
+  - {fileID: 6308795470939233182, guid: 196d4438753b6ca4c8dc535b13e108e8, type: 3}
+  - {fileID: 6308795470939233182, guid: 0a7abf38a6d04ae4eba36c8fb7e7b9d8, type: 3}
+  - {fileID: 6308795470939233182, guid: 1de89fd5149f36f47a8cc8e31d0041f7, type: 3}
+  - {fileID: 6146811133726165489, guid: 08f832cbeb59681449b4df40b76dd675, type: 3}
+  - {fileID: 6308795470939233182, guid: 6702c9f4bd637094bb3db9070c2936b4, type: 3}
   minTimeBetweenSpawn: 0
   maxTimeBetweenSpawn: 0
   enemiesParent: {fileID: 0}

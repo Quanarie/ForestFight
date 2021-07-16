@@ -22,7 +22,7 @@ public class PotionGenerator : MonoBehaviour
                 Vector3Int newTilePos = new Vector3Int(i, j, 0);
                 if (groundTilemap.HasTile(newTilePos) && Random.value > chanceOfSpawn)
                 {
-                    GameObject newPotion = Instantiate(potions[Random.Range(0, Mathf.Min(PlayerExperience.Lvl, potions.Length))], groundTilemap.CellToWorld(newTilePos), transform.rotation, potionParent);
+                    GameObject newPotion = Instantiate(potions[Random.Range(0, Mathf.Min(PlayerExperience.Lvl / 2, potions.Length))], groundTilemap.CellToWorld(newTilePos), transform.rotation, potionParent);
                     newPotion.GetComponent<Pickupable>().SetInventory(inventory);
                 }
             }

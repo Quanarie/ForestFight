@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class RoomSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] potions;
     [SerializeField] private GameObject room;
     [SerializeField] private int minNumberOfRooms;
     [SerializeField] private int maxNumberOfRooms;
@@ -17,6 +17,9 @@ public class RoomSpawner : MonoBehaviour
     [SerializeField] private float difficulty;
     [SerializeField] private Inventory inventory;
     [SerializeField] private Transform roomsParent;
+    [SerializeField] private int actionRadius;
+    [SerializeField] private Tilemap treeTileMap;
+    [SerializeField] private Vector2 offset;
 
     private EnemySpawner currentEnemySpawner;
 
@@ -51,9 +54,16 @@ public class RoomSpawner : MonoBehaviour
             enemySpawner.SetMaxTimeBetweenSpawn(maxTimeBetweenSpawn);
             enemySpawner.SetLvlOfEnemies(maxLvlOfEnemy);
             enemySpawner.SetEnemies(enemiesParent);
-            enemySpawner.SetPotions(potions);
             enemySpawner.SetInventory(inventory);
             enemySpawner.SetMaxNumberOfEnemies(Random.Range(minNumberOfMobs, maxNumberOfMobs));
+
+            for (int x = treeTileMap.WorldToCell(roomPos).x - actionRadius; x < treeTileMap.WorldToCell(roomPos).x + actionRadius; x++)
+            {
+                for (int y = treeTileMap.WorldToCell(roomPos).y - actionRadius; y < treeTileMap.WorldToCell(roomPos).y + actionRadius; y++)
+                {
+                    treeTileMap.SetTile(new Vector3Int(x + (int)offset.x, y + (int)offset.y, 0), null);
+                }
+            }
         }
     }
 
