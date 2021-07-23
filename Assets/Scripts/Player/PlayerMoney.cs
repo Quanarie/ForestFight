@@ -7,7 +7,7 @@ public class PlayerMoney : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI moneyText;
 
-    private float moneyValue = 0f;
+    private float moneyValue = 10f;
 
     public float CurrentMoney 
     { 

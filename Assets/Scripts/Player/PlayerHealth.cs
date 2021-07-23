@@ -62,4 +62,6 @@ public class PlayerHealth : MonoBehaviour
             healthSlider.value = currentHealth;
         }
     }
+
+    public float GetMaxHealth() => maxHealth;
 }
