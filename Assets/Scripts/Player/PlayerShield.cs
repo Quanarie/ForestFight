@@ -8,8 +8,6 @@ public class PlayerShield : MonoBehaviour
     [SerializeField] private float maxArmor;
     [SerializeField] private float recoverySpeed;
     [SerializeField] private Slider currentArmorSlider;
-    [SerializeField] private Slider maxArmorUpgradeSlider;
-    [SerializeField] private Slider armorRecoveryUpgradeSlider;
 
     private float currentArmor;
 
@@ -18,8 +16,6 @@ public class PlayerShield : MonoBehaviour
         currentArmor = maxArmor;
         currentArmorSlider.value = currentArmor;
         currentArmorSlider.maxValue = maxArmor;
-        maxArmorUpgradeSlider.value = maxArmor;
-        armorRecoveryUpgradeSlider.value = recoverySpeed;
     }
 
     private void Update()

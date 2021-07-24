@@ -8,16 +8,24 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
     [SerializeField] private Slider healthSlider;
-    [SerializeField] private Slider healthUpgradeSlider;
 
     private float currentHealth;
+    public float HealthRecovery { get; set; }
 
     private void Start()
     {
         currentHealth = maxHealth;
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
-        healthUpgradeSlider.value = maxHealth;
+        HealthRecovery = 0f;
+    }
+
+    private void Update()
+    {
+        if (currentHealth + HealthRecovery * Time.deltaTime <= maxHealth)
+        {
+            currentHealth += HealthRecovery * Time.deltaTime;
+        }
     }
 
     public void TakeDamage(float damage)

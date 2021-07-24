@@ -10,14 +10,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dodgeDistance;
     [SerializeField] private float dodgeRechargeTime;
     [SerializeField] private Joystick joystick;
-    [SerializeField] private Slider stealthUpgradeSlider;
 
     private Animator animator;
     private float timeFromPreviousDodge = 0f;
 
     private void Start()
     {
-        stealthUpgradeSlider.value = -unhiddenDistance;
         animator = GetComponent<Animator>();
     }
 

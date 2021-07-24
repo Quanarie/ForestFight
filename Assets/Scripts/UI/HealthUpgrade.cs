@@ -19,6 +19,8 @@ public class HealthUpgrade : AbstractSkillUpgrade
                     PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
                     playerHealth.OnHealthUpgrade(playerHealth.GetMaxHealth() + toUpgrade);
 
+                    UnlockNextSkill();
+                    ActivateCurrentSkill();
                     isUpgraded = true;
                 }
             }
