@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth + HealthRecovery * Time.deltaTime <= maxHealth)
         {
             currentHealth += HealthRecovery * Time.deltaTime;
+            healthSlider.value = currentHealth;
         }
     }
 

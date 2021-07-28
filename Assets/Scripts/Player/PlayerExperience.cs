@@ -12,7 +12,7 @@ public class PlayerExperience : MonoBehaviour
 
     public static int Lvl = 1;
 
-    private const int numberOfLvls = 20;
+    private const int numberOfLvls = 40;
     private const float lvlUpMultiplicator = 2f;
 
     public float CurrentExperience
